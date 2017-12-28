@@ -1,0 +1,26 @@
+{
+  "name": "my-express",
+  "version": "1.0.0",
+  "description": "Build projects using express framework.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangbingxin/myExpress.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "wangbingxin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangbingxin/myExpress/issues"
+  },
+  "homepage": "https://github.com/wangbingxin/myExpress#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jade": "^1.11.0"
+  }
+}
