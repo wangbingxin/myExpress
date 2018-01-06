@@ -1,10 +1,10 @@
 const express=require('express')  // 引入express依赖
 
-const app=express() // 创建express实例
+const app=express() // 生成express实例
 
-// 对首页的访问返回"Hello world!"
+// 挂载跟路由控制器
 app.get('/',(req,res)=>{
 	res.send('Hello world!')
 })
 
-app.listen(8080)  // 启动端口号为8080的服务
+app.listen(8080)  // 监听8080端口号并启动程序
