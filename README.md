@@ -14,7 +14,7 @@
 
 	const app=express() // 生成express实例
 
-	// 挂载跟路由控制器
+	// 挂载根路由控制器
 	app.get('/',(req,res)=>{
 		res.send('Hello world!')
 	})
@@ -45,4 +45,42 @@
 	}
 
 	线上可以使用PM2或forever进程管理工具，开发环境下使用supervisor即可
+```
+路由
+新建名为routes的路由文件夹，所有路由文件都放在该文件夹下
+在routes文件夹下创建index.js文件，路由入口文件
+```
+	const a = require('./a')
+	const b = require('./b')
+
+	module.exports = (app) => {
+		app.get('/', (req,res)=>{
+			res.redirect('/a')
+		})
+
+		app.use('/a', a)
+		app.use('/b', b)
+
+		app.use((req,res)=>{
+			if(!res.headersSent){
+				res.status(404).render('404')
+			}
+		})
+	}
+```
+修改app.js文件
+```
+	const express = require('express')  // 引入express依赖
+	const app = express() // 生成express实例
+	const routes = require('./routes') // 引入路由文件
+
+	// 挂载路由
+	routes(app)
+
+	app.listen(8080)  // 监听8080端口号并启动程序
+```
+模板引擎
+这里使用jade模板引擎
+```
+	npm install -S jade  // 安装jade包
 ```
