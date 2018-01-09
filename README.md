@@ -80,7 +80,13 @@
 	app.listen(8080)  // 监听8080端口号并启动程序
 ```
 模板引擎
-这里使用jade模板引擎
+这里使用jade模板引擎，jade模板引擎语法 http://jade-lang.com/
 ```
 	npm install -S jade  // 安装jade包
+```
+新建views文件夹存放模板文件(.jade文件)
+在app.js文件中设置模板引擎
+```
+	app.set('views', path.join(__dirname, 'views'))  // 指定模板文件目录
+	app.set('view engine', 'jade')  // 设置模板引擎为jade
 ```

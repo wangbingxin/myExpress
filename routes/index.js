@@ -3,10 +3,10 @@ const b = require('./b')
 
 module.exports = (app) => {
 	app.get('/', (req,res)=>{
-		res.redirect('/a')
+		res.redirect('/')
 	})
 
-	app.use('/a', a)
+	app.use('/', a)
 	app.use('/b', b)
 
 	app.use((req,res)=>{
