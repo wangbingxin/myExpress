@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p 这是 #{title}页面11
+	ul
+		- data.forEach(function(item){
+		li= item.book_name
+		- })

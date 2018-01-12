@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "supervisor --harmoney app"
+    "dev": "nodemon app.js --exec babel-node --presets es2015,stage-2"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,14 @@
   },
   "homepage": "https://github.com/wangbingxin/myExpress#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "express": "^4.16.2",
     "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.14.11"
   }
 }

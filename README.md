@@ -90,3 +90,30 @@
 	app.set('views', path.join(__dirname, 'views'))  // 指定模板文件目录
 	app.set('view engine', 'jade')  // 设置模板引擎为jade
 ```
+引用静态文件
+新建public文件夹，里面分别存放图片，样式和js
+在app.js中添加如下代码
+```
+	// 调用express.static中间件访问静态文件
+	app.use(express.static(path.join(__dirname, 'public')))
+```
+使用ES6
+```
+	npm install -D babel-cli babel-preset-es2015 babel-preset-stage-2
+```
+ES6需要使用babel-node运行代码
+```
+	babel-node app.js --presets es2015,stage-2
+```
+这种情况下，我们需要使用nodemon替换supervisor来监听代码更新
+```
+	// 安装nodemon
+	npm install -D nodemon
+```
+修改运行脚本
+```
+	"scripts": {
+	    "test": "echo \"Error: no test specified\" && exit 1",
+	    "dev": "nodemon app.js --exec babel-node --presets es2015,stage-2"
+	  }
+```
