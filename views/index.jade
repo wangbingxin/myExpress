@@ -2,6 +2,12 @@ extends layout
 
 block content
 	ul
-		- data.forEach(function(item){
-		li= item.book_name
+		- data1.forEach(function(item){
+			li= item.book_name
 		- })
+	- data2.forEach(item=>{
+		p= item.second.keyword
+	- })
+	- data3.forEach(item=>{
+		h1= item.book_name
+	- })
