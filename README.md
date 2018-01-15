@@ -117,3 +117,15 @@ ES6需要使用babel-node运行代码
 	    "dev": "nodemon app.js --exec babel-node --presets es2015,stage-2"
 	  }
 ```
+使用css预处理器sass
+```
+	npm install -D node-sass-middleware // 安装sass预处理器中间件
+	在app.js中使用中间件
+	const sass = require('node-sass-middleware')  // 引入sass中间件
+	app.use(
+		sass({
+			src:__dirname+'/public/',  // sass源文件目录
+			dest:__dirname+'/public/'  // css文件的编译生成目录
+		})
+	)
+```
